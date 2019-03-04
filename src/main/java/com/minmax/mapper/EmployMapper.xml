@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.minmax.mapper.EmployMapper">
+  <resultMap id="BaseResultMap" type="com.minmax.model.Employ">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="e_id" jdbcType="BIGINT" property="eId" />
+    <result column="e_name" jdbcType="VARCHAR" property="eName" />
+    <result column="e_age" jdbcType="TINYINT" property="eAge" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+</mapper>

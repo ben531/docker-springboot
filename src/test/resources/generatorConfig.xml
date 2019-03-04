@@ -1,0 +1,47 @@
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+	<context id="Mysql" targetRuntime="MyBatis3Simple"
+		defaultModelType="flat">
+		<property name="beginningDelimiter" value="`" />
+		<property name="endingDelimiter" value="`" />
+
+		<plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+			<property name="mappers" value="tk.mybatis.mapper.common.Mapper" />
+			<property name="caseSensitive" value="true" />
+		</plugin>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.18.134:3306/learn_docker" userId="root"
+			password="123456" />
+			
+
+		<javaTypeResolver type="com.minmax.MyJavaTypeResolver" />
+		
+		<!-- 生成model.java -->
+		<!-- <javaModelGenerator targetPackage="com.jurong.financial.model" -->
+		<!-- targetProject="src/main/java" /> -->
+		<javaModelGenerator targetPackage="com.minmax.model"
+			targetProject="src/test/java" />
+
+		<!-- 生成.xml -->
+		<!-- <sqlMapGenerator targetPackage="com.jurong.financial.mapper" -->
+		<!-- targetProject="src/main/java" /> -->
+		<sqlMapGenerator targetPackage="com.minmax.mapper"
+		targetProject="src/test/java" />
+
+
+		<!-- 生成Mapper.java -->
+		<!-- <javaClientGenerator targetPackage="com.jurong.financial.mapper" -->
+		<!-- targetProject="src/main/java" type="XMLMAPPER" /> -->
+		<javaClientGenerator targetPackage="com.minmax.mapper" 
+		targetProject="src/test/java" type="XMLMAPPER" />
+
+		<table tableName="employ"/>
+		
+<!-- 		</table> -->
+	</context>
+</generatorConfiguration>
